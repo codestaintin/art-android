@@ -12,9 +12,23 @@ machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
 
+checkout:
+    post:
+        - cp -r licenses/ $ANDROID_HOME/licenses
+
 dependencies:
+    pre:
+        - yes | sdkmanager --licenses
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,android-2
+        - echo y | android update sdk --no-ui --all --filter build-tools-27.0.0
+        - echo y | android update sdk --no-ui --all --filter android-27
+        - echo y | android update sdk --no-ui --all --filter tools
+        - echo y | android update sdk --no-ui --all --filter extra-android-m2repository
+        - echo y | android update sdk --no-ui --all --filter extra-android-support
+        - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
+        - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
     override:
-        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-27.0.0,android-27,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+        - chmod +x gradlew
         - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
 test:
