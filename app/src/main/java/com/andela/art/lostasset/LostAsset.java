@@ -16,7 +16,7 @@ import com.andela.art.R;
 
 import java.util.ArrayList;
 
-public class LostAsset extends AppCompatActivity implements LostAssetView {
+public class LostAsset extends AppCompatActivity implements LostAssetContract.LostAssetView {
 
     LostAssetPresenter presenter;
     Spinner sCohort, sLostAsset;
