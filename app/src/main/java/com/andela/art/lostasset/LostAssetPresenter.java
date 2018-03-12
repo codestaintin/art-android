@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class LostAssetPresenter {
 
-    LostAssetView view;
-    LostAssetModel model;
+    LostAssetContract.LostAssetView view;
+    LostAssetContract.LostAssetModel model;
 
-    public LostAssetPresenter(LostAssetView view, LostAssetModel model) {
+    public LostAssetPresenter(LostAssetContract.LostAssetView view, LostAssetContract.LostAssetModel model) {
         this.view = view;
         this.model = model;
     }
