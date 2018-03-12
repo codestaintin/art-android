@@ -3,7 +3,7 @@ package com.andela.art.lostasset;
 
 import java.util.ArrayList;
 
-public class DataStore implements LostAssetModel {
+public class DataStore implements LostAssetContract.LostAssetModel {
 
     @Override
     public ArrayList<String> fetchCohorts() {
