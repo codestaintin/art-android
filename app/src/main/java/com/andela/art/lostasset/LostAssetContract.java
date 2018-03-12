@@ -11,7 +11,6 @@ public interface LostAssetContract {
     interface LostAssetModel {
         ArrayList<String> fetchCohorts();
         ArrayList<String> fetchAssets();
-
     }
 
     interface LostAssetView {
