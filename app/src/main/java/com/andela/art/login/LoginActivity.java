@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityMVP
         setContentView(R.layout.activity_login);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ActivityLoginBinding activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         activityLoginBinding.googleSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
